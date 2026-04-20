@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp list)",
+      "Bash(claude mcp list *)",
+      "Bash(winget --version)",
+      "Bash(winget list *)",
+      "Bash(winget search *)",
+      "Bash(where *)",
+      "Bash(git remote -v)",
+      "Bash(npm ls)",
+      "Bash(npm ls *)",
+      "Bash(npm outdated)",
+      "Bash(npm outdated *)",
+      "Bash(npm view *)",
+      "Bash(npm config get *)",
+      "Bash(npm --version)",
+      "Bash(npx --version)"
+    ]
+  }
+}

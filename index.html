@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ремонт телефонов, планшетов и ноутбуков в Новокосино · Сервис KSV</title>
+  <meta name="description" content="Сервисный центр KSV у метро Новокосино. Ремонт iPhone, Android, планшетов, ноутбуков, принтеров. Гарантия до 12 месяцев. Бесплатная диагностика. ★ 5.0 на Яндексе.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800;900&display=swap">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#0A0A0A',
+            'dark-2': '#18181B',
+            muted: '#71717A',
+            'body-muted': '#52525B',
+            accent: '#DC2626',
+            'accent-hover': '#B91C1C',
+            'light-bg': '#FAFAFA',
+            border: '#E4E4E7',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            'display': '-0.025em',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-sans text-dark-2 bg-white antialiased">
+
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-40 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
+      <a href="#hero" class="font-display font-extrabold text-2xl md:text-3xl text-white tracking-display" aria-label="KSV — на главную">
+        KS<span class="text-accent">V</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-10 text-sm text-white/75">
+        <a href="#services" class="hover:text-white transition-colors duration-200">Услуги</a>
+        <a href="#pricing" class="hover:text-white transition-colors duration-200">Цены</a>
+        <a href="#reviews" class="hover:text-white transition-colors duration-200">Отзывы</a>
+        <a href="#contacts" class="hover:text-white transition-colors duration-200">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="tel:+79646375595" class="hidden sm:inline-flex items-center gap-2 text-white font-medium hover:text-accent transition-colors duration-200 tabular-nums">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="hidden lg:inline">+7&nbsp;(964)&nbsp;637-55-95</span>
+        </a>
+        <button id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white w-11 h-11 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors duration-200">
+          <svg id="burger-icon-open" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+          <svg id="burger-icon-close" class="hidden w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-white/5">
+      <nav class="flex flex-col px-4 py-4 gap-1 text-white">
+        <a href="#services" class="py-3 text-base">Услуги</a>
+        <a href="#pricing" class="py-3 text-base">Цены</a>
+        <a href="#reviews" class="py-3 text-base">Отзывы</a>
+        <a href="#contacts" class="py-3 text-base">Контакты</a>
+        <a href="tel:+79646375595" class="py-3 text-base text-accent font-semibold tabular-nums">+7&nbsp;(964)&nbsp;637-55-95</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="relative bg-dark text-white overflow-hidden pt-32 pb-24 md:pt-44 md:pb-36 min-h-[100svh] md:min-h-[88vh] flex items-center">
+    <div class="absolute inset-0 hero-grid pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-0 hero-vignette pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 md:px-8 w-full grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+      <div class="lg:col-span-7">
+        <div class="flex flex-wrap items-center gap-2 mb-7">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-accent text-white">
+            <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>Экспресс&nbsp;от&nbsp;30&nbsp;минут
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/[0.08] text-white/90 border border-white/10">
+            Гарантия до 12&nbsp;месяцев
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/[0.08] text-white/90 border border-white/10">
+            Диагностика бесплатно
+          </span>
+        </div>
+
+        <h1 class="font-display font-black text-[2.75rem] sm:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.95] tracking-display">
+          Ремонт техники<br>
+          <span class="text-white/85">у метро&nbsp;Новокосино.</span><br>
+          <span class="text-accent">Экспресс от 30&nbsp;минут</span>
+        </h1>
+
+        <p class="mt-7 text-lg md:text-xl text-white/70 max-w-xl leading-relaxed">
+          Телефоны, планшеты, ноутбуки, оргтехника. Гарантия&nbsp;до&nbsp;12&nbsp;месяцев, бесплатная диагностика при клиенте.
+        </p>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-3">
+          <a href="tel:+79646375595" data-track="call_click" class="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent hover:bg-accent-hover transition-colors duration-200 text-white font-semibold rounded-xl text-base tabular-nums">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Позвонить
+            <span class="text-white/80 font-normal ml-1 hidden sm:inline">+7&nbsp;(964)&nbsp;637-55-95</span>
+          </a>
+          <a href="https://t.me/ksv_service_bot" target="_blank" rel="noopener" data-track="telegram_click" class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/[0.06] hover:bg-white/10 border border-white/15 transition-colors duration-200 text-white font-semibold rounded-xl text-base">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+            Написать в Telegram
+          </a>
+        </div>
+
+        <div class="mt-9 flex items-center gap-3 text-sm text-white/60">
+          <div class="flex items-center gap-0.5 text-accent" aria-hidden="true">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 18,22 12,18 6,22 7,14 2,9 9,9"/></svg>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 18,22 12,18 6,22 7,14 2,9 9,9"/></svg>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 18,22 12,18 6,22 7,14 2,9 9,9"/></svg>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 18,22 12,18 6,22 7,14 2,9 9,9"/></svg>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 18,22 12,18 6,22 7,14 2,9 9,9"/></svg>
+          </div>
+          <span class="tabular-nums"><strong class="text-white font-semibold">5.0</strong> на Яндексе&nbsp;· 319&nbsp;отзывов</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="bg-white text-dark-2 rounded-2xl p-6 md:p-7 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.5)] border border-black/5">
+          <div class="flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-wider mb-1.5">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            Записаться на звонок
+          </div>
+          <div class="font-display font-extrabold text-2xl mb-5 tracking-tight">Перезвоним за 5&nbsp;минут</div>
+          <form id="hero-form" class="space-y-3" novalidate>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden">
+            <input type="hidden" name="source" value="hero">
+            <div>
+              <label for="hero-name" class="sr-only">Ваше имя</label>
+              <input id="hero-name" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required class="w-full h-12 px-4 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200">
+            </div>
+            <div>
+              <label for="hero-phone" class="sr-only">Телефон</label>
+              <input id="hero-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required class="w-full h-12 px-4 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200 phone-mask tabular-nums">
+            </div>
+            <button type="submit" data-track="form_submit_hero" class="w-full h-12 bg-dark hover:bg-black transition-colors duration-200 text-white font-semibold rounded-lg">
+              Жду звонка
+            </button>
+            <p class="text-xs text-muted text-center leading-relaxed px-2">
+              Нажимая кнопку, соглашаюсь с <a href="#privacy" class="underline hover:text-dark-2 transition-colors">политикой обработки данных</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-24 md:py-32 bg-light-bg">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl">
+        <div class="text-xs font-bold text-accent mb-4 uppercase tracking-[0.15em]">Что ремонтируем</div>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-display">
+          Ремонт телефонов, планшетов<br class="hidden lg:block">
+          и ноутбуков в&nbsp;Новокосино
+        </h2>
+        <p class="mt-6 text-lg text-body-muted leading-relaxed">
+          Работаем с любыми брендами и моделями. Бесплатная диагностика, прозрачные цены, честные сроки.
+        </p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-5">
+        <article class="group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200">
+          <div class="w-12 h-12 rounded-xl bg-dark-2 text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-200">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5" ry="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl mb-4 tracking-tight">Телефоны</h3>
+          <ul class="space-y-2.5 text-body-muted text-[15px] leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена экрана и стекла</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена аккумулятора</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Ремонт после залития</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Восстановление после падения</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена корпуса и разъёмов</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Программные сбои, прошивка</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-border flex flex-wrap gap-1.5">
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">iPhone</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Samsung</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Huawei</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Xiaomi</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Honor</span>
+          </div>
+        </article>
+
+        <article class="group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200">
+          <div class="w-12 h-12 rounded-xl bg-dark-2 text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-200">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5" ry="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl mb-4 tracking-tight">Планшеты</h3>
+          <ul class="space-y-2.5 text-body-muted text-[15px] leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена дисплея и стекла</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена аккумулятора</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Ремонт кнопок и разъёмов</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Восстановление после залития</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Чистка и профилактика</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Программный ремонт</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-border flex flex-wrap gap-1.5">
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">iPad</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Samsung Galaxy Tab</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Huawei</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Lenovo</span>
+          </div>
+        </article>
+
+        <article class="group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200">
+          <div class="w-12 h-12 rounded-xl bg-dark-2 text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-200">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl mb-4 tracking-tight">Ноутбуки и&nbsp;ПК</h3>
+          <ul class="space-y-2.5 text-body-muted text-[15px] leading-relaxed">
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена матрицы</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Замена клавиатуры и АКБ</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Чистка, замена термопасты</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Ремонт материнской платы, пайка</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Восстановление данных</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0"></span>Установка ПО и Windows</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-border flex flex-wrap gap-1.5">
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Apple</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Lenovo</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">HP</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Asus</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Acer</span>
+            <span class="text-xs font-medium text-body-muted bg-light-bg px-2.5 py-1 rounded-md">Dell</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-5 bg-dark text-white rounded-2xl p-8 md:p-10 relative overflow-hidden">
+        <div class="absolute inset-0 hero-grid opacity-50 pointer-events-none" aria-hidden="true"></div>
+        <div class="relative flex items-start md:items-center gap-6 flex-col md:flex-row">
+          <div class="flex-1">
+            <h3 class="font-display font-bold text-2xl md:text-3xl mb-3 tracking-tight">Ещё ремонтируем</h3>
+            <p class="text-white/70 text-base md:text-lg leading-relaxed">
+              Принтеры и МФУ&nbsp;· Мониторы&nbsp;· Видеокарты&nbsp;· Заправка картриджей&nbsp;· Бытовая электроника
+            </p>
+          </div>
+          <a href="#contacts" class="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-white/[0.08] border border-white/15 hover:bg-white/15 transition-colors duration-200 text-white font-semibold rounded-xl text-sm">
+            Уточнить по своей модели
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl">
+        <div class="text-xs font-bold text-accent mb-4 uppercase tracking-[0.15em]">Контакты</div>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-display">
+          Приезжайте<br class="sm:hidden">
+          или оставьте заявку
+        </h2>
+        <p class="mt-6 text-lg text-body-muted leading-relaxed">
+          Приём техники на Новокосинской,&nbsp;19. Диагностика бесплатно, пока вы ждёте.
+        </p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div class="space-y-7">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 shrink-0 rounded-xl bg-light-bg flex items-center justify-center text-accent">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-base">Адрес</div>
+              <div class="text-body-muted mt-0.5">Новокосинская&nbsp;ул.,&nbsp;19, 1&nbsp;этаж</div>
+              <div class="text-muted text-sm mt-1">Москва, 111673 · метро&nbsp;Новокосино</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 shrink-0 rounded-xl bg-light-bg flex items-center justify-center text-accent">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-base">Часы работы</div>
+              <div class="text-body-muted mt-0.5 tabular-nums">Ежедневно&nbsp;· 09:00&nbsp;—&nbsp;21:00</div>
+              <div class="text-xs text-muted mt-1">Точное расписание по дням уточняется</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 shrink-0 rounded-xl bg-light-bg flex items-center justify-center text-accent">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="font-semibold text-base">Связь</div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <a href="tel:+79646375595" data-track="call_click" class="inline-flex items-center gap-2 h-11 px-4 bg-accent hover:bg-accent-hover transition-colors duration-200 text-white font-semibold rounded-lg text-sm tabular-nums">
+                  +7&nbsp;(964)&nbsp;637-55-95
+                </a>
+                <a href="https://t.me/ksv_service_bot" target="_blank" rel="noopener" data-track="telegram_click" class="inline-flex items-center gap-2 h-11 px-4 border border-border hover:border-dark-2 transition-colors duration-200 text-dark-2 font-semibold rounded-lg text-sm">
+                  Telegram
+                </a>
+                <a href="https://wa.me/79646375595" target="_blank" rel="noopener" data-track="whatsapp_click" class="inline-flex items-center gap-2 h-11 px-4 border border-border hover:border-dark-2 transition-colors duration-200 text-dark-2 font-semibold rounded-lg text-sm">
+                  WhatsApp
+                </a>
+                <a href="https://vk.com/public175833931" target="_blank" rel="noopener" class="inline-flex items-center gap-2 h-11 px-4 border border-border hover:border-dark-2 transition-colors duration-200 text-dark-2 font-semibold rounded-lg text-sm">
+                  VK
+                </a>
+              </div>
+              <div class="text-xs text-muted mt-3 tabular-nums">Принимаем звонки с&nbsp;09:00&nbsp;до&nbsp;21:00</div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden border border-border aspect-[4/3]">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.864%2C55.745&mode=search&sll=37.864%2C55.745&sspn=0.012%2C0.006&text=%D0%9D%D0%BE%D0%B2%D0%BE%D0%BA%D0%BE%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%2019%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&z=17"
+              class="w-full h-full border-0"
+              loading="lazy"
+              title="Сервис KSV на карте Яндекса">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="bg-light-bg rounded-2xl p-7 md:p-9 border border-border">
+          <div class="flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-[0.15em] mb-3">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            Заявка на ремонт
+          </div>
+          <div class="font-display font-extrabold text-2xl md:text-3xl mb-7 tracking-tight leading-tight">Опишите проблему&nbsp;— перезвоним</div>
+
+          <form id="contacts-form" class="space-y-4" novalidate>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden">
+            <input type="hidden" name="source" value="contacts">
+
+            <div>
+              <label for="c-name" class="block text-sm font-semibold mb-1.5">Имя</label>
+              <input id="c-name" type="text" name="name" autocomplete="name" required class="w-full h-12 px-4 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200">
+            </div>
+
+            <div>
+              <label for="c-phone" class="block text-sm font-semibold mb-1.5">Телефон</label>
+              <input id="c-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required class="w-full h-12 px-4 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200 phone-mask tabular-nums">
+            </div>
+
+            <div>
+              <label for="c-device" class="block text-sm font-semibold mb-1.5">Устройство</label>
+              <div class="relative">
+                <select id="c-device" name="device" required class="select-custom w-full h-12 px-4 pr-10 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200">
+                  <option value="">Выберите устройство</option>
+                  <option>Телефон</option>
+                  <option>Планшет</option>
+                  <option>Ноутбук</option>
+                  <option>Принтер или МФУ</option>
+                  <option>Другое</option>
+                </select>
+                <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+
+            <div>
+              <label for="c-problem" class="block text-sm font-semibold mb-1.5">Опишите проблему&nbsp;<span class="text-muted font-normal">(необязательно)</span></label>
+              <textarea id="c-problem" name="problem" rows="3" class="w-full px-4 py-3 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200 resize-none"></textarea>
+            </div>
+
+            <label class="flex items-start gap-3 text-sm text-body-muted cursor-pointer select-none">
+              <input type="checkbox" name="consent" required class="mt-1 w-4 h-4 accent-accent shrink-0">
+              <span>Согласен на обработку персональных данных согласно <a href="#privacy" class="underline text-dark-2 hover:text-accent transition-colors">политике конфиденциальности</a></span>
+            </label>
+
+            <button type="submit" data-track="form_submit_contacts" class="w-full h-14 bg-accent hover:bg-accent-hover transition-colors duration-200 text-white font-semibold rounded-lg text-base">
+              Оставить заявку
+            </button>
+
+            <p class="text-xs text-muted text-center tabular-nums">Все работы с гарантией до&nbsp;12&nbsp;месяцев</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-14 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="font-display font-extrabold text-3xl mb-4 tracking-display">
+            KS<span class="text-accent">V</span>
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+            Сервисный центр по ремонту телефонов, планшетов, ноутбуков и&nbsp;оргтехники у&nbsp;метро Новокосино.
+          </p>
+        </div>
+        <div>
+          <div class="font-semibold mb-4 text-sm uppercase tracking-wider text-white/40">Контакты</div>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li>Новокосинская&nbsp;ул.,&nbsp;19</li>
+            <li><a href="tel:+79646375595" class="hover:text-white transition-colors tabular-nums">+7&nbsp;(964)&nbsp;637-55-95</a></li>
+            <li class="tabular-nums">Ежедневно&nbsp;09:00&nbsp;—&nbsp;21:00</li>
+            <li class="pt-2 flex gap-3">
+              <a href="https://t.me/ksv_service_bot" target="_blank" rel="noopener" class="hover:text-accent transition-colors" aria-label="Telegram">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+              </a>
+              <a href="https://wa.me/79646375595" target="_blank" rel="noopener" class="hover:text-accent transition-colors" aria-label="WhatsApp">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2.003c-5.517 0-9.996 4.478-9.996 9.996 0 1.76.462 3.483 1.338 5l-1.42 5.188 5.313-1.394a9.96 9.96 0 0 0 4.762 1.213h.004c5.514 0 9.993-4.479 9.996-9.996a9.93 9.93 0 0 0-2.924-7.07 9.936 9.936 0 0 0-7.073-2.937zm0 18.273h-.003a8.297 8.297 0 0 1-4.225-1.155l-.303-.18-3.14.824.838-3.06-.197-.314a8.28 8.28 0 0 1-1.272-4.42c.002-4.58 3.728-8.305 8.307-8.305a8.26 8.26 0 0 1 5.87 2.432 8.263 8.263 0 0 1 2.43 5.876c-.002 4.58-3.729 8.302-8.305 8.302z"/></svg>
+              </a>
+              <a href="https://vk.com/public175833931" target="_blank" rel="noopener" class="hover:text-accent transition-colors" aria-label="ВКонтакте">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.79 15.57c.32 0 .48-.21.48-.46 0-.26-.14-.42-.37-.42h-.93c-.25 0-.42.16-.42.42 0 .25.17.46.42.46zm1.8-1.17h.91c.26 0 .42-.14.42-.37 0-.25-.16-.4-.42-.4h-.91c-.26 0-.42.15-.42.4 0 .23.16.37.42.37zm-5.58 0h.91c.26 0 .42-.14.42-.37 0-.25-.16-.4-.42-.4h-.91c-.26 0-.42.15-.42.4 0 .23.16.37.42.37zM15.88 3H8.12C4.26 3 3 4.26 3 8.12v7.76C3 19.74 4.26 21 8.12 21h7.76c3.86 0 5.12-1.26 5.12-5.12V8.12C21 4.26 19.74 3 15.88 3zm2.42 12.17h-1.29c-.42 0-.55-.34-1.29-1.08-.66-.62-.93-.7-1.09-.7-.22 0-.29.06-.29.37v1.1c0 .26-.08.41-.78.41-1.13 0-2.38-.69-3.28-1.96-1.33-1.84-1.7-3.23-1.7-3.51 0-.16.07-.31.38-.31h1.29c.28 0 .39.13.5.43.63 1.82 1.69 3.4 2.12 3.4.17 0 .24-.07.24-.52V10.9c-.05-.83-.5-.9-.5-1.2 0-.13.11-.27.29-.27h2.03c.24 0 .32.12.32.41v2.75c0 .24.11.33.18.33.17 0 .32-.09.64-.41 1-1.13 1.71-2.87 1.71-2.87.09-.2.25-.39.52-.39h1.29c.39 0 .48.2.39.47-.16.76-1.75 3.01-1.75 3.01-.14.22-.19.32 0 .57.14.19.6.58.91.94.56.63.99 1.16 1.11 1.53.11.38-.08.57-.46.57z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold mb-4 text-sm uppercase tracking-wider text-white/40">Документы</div>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li><a href="#privacy" class="hover:text-white transition-colors">Политика обработки данных</a></li>
+            <li class="text-white/40 text-xs">[[ORG_TYPE]]&nbsp;[[ORG_NAME]]&nbsp;· ИНН&nbsp;[[INN]]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/10 text-xs text-white/40 flex flex-col md:flex-row justify-between gap-2">
+        <div>© 2026 Сервис KSV. Все права защищены.</div>
+        <div>Создано с&nbsp;заботой о&nbsp;клиентах в&nbsp;Новокосино</div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-sm z-50 bg-dark text-white rounded-2xl p-5 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.6)] border border-white/10 hidden">
+    <button id="cookie-close" type="button" aria-label="Закрыть" class="absolute top-3 right-3 w-8 h-8 rounded-lg hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+    <p class="text-sm text-white/80 leading-relaxed pr-6">
+      Мы используем cookies и Яндекс.Метрику (включая Вебвизор) для работы сайта.
+    </p>
+    <div class="mt-4 flex items-center gap-3">
+      <button id="cookie-accept" type="button" class="px-4 py-2.5 bg-accent hover:bg-accent-hover transition-colors duration-200 text-white font-semibold rounded-lg text-sm">
+        Принять
+      </button>
+      <a href="#privacy" class="text-sm text-white/60 hover:text-white underline transition-colors">Подробнее</a>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/form.js" defer></script>
+</body>
+</html>
