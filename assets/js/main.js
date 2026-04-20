@@ -130,6 +130,35 @@
     io.observe(hero);
   }
 
+  const pricingTabs = document.querySelectorAll('.pricing-tab');
+  const pricingPanels = document.querySelectorAll('.pricing-panel');
+  if (pricingTabs.length && pricingPanels.length) {
+    const activate = (key) => {
+      pricingTabs.forEach((tab) => {
+        const isActive = tab.getAttribute('data-tab') === key;
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+      pricingPanels.forEach((panel) => {
+        panel.classList.toggle('hidden', panel.getAttribute('data-panel') !== key);
+      });
+      if (window.ym && window.YM_COUNTER_ID) {
+        window.ym(window.YM_COUNTER_ID, 'reachGoal', 'price_tab_switch');
+      }
+    };
+    pricingTabs.forEach((tab, idx) => {
+      tab.addEventListener('click', () => activate(tab.getAttribute('data-tab')));
+      tab.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        e.preventDefault();
+        const dir = e.key === 'ArrowRight' ? 1 : -1;
+        const next = pricingTabs[(idx + dir + pricingTabs.length) % pricingTabs.length];
+        next.focus();
+        activate(next.getAttribute('data-tab'));
+      });
+    });
+  }
+
   document.querySelectorAll('[data-track]').forEach((el) => {
     el.addEventListener('click', () => {
       const goal = el.getAttribute('data-track');
