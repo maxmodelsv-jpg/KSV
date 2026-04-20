@@ -72,6 +72,21 @@ body {
   transform: translateY(0);
 }
 
+/* Pricing-табы — pill-buttons, неактивные на светлом фоне, активный на тёмном. */
+.pricing-tab {
+  background: #fff;
+  color: #18181B;
+  border: 1px solid #E4E4E7;
+}
+.pricing-tab:hover {
+  border-color: #18181B;
+}
+.pricing-tab[aria-selected="true"] {
+  background: #0A0A0A;
+  color: #fff;
+  border-color: #0A0A0A;
+}
+
 /* Custom select — убираем нативную стрелку, рисуем свою в HTML. */
 .select-custom {
   appearance: none;
