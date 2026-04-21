@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 yarn-debug.log
 yarn-error.log
+package-lock.json
 
 # Environment / secrets
 .env
@@ -21,9 +22,6 @@ desktop.ini
 *.swo
 *~
 
-# Tailwind build artifacts (собираем на Netlify / локально перед деплоем)
-# assets/css/style.compiled.css
-
 # Local data
 data.sqlite
 *.sqlite-journal
@@ -37,3 +35,7 @@ logs/
 
 # Локальные переопределения Claude Code
 .claude/settings.local.json
+
+# Playwright screenshots / snapshots (для отладки, не в репо)
+.playwright-mcp/
+*.playwright.png

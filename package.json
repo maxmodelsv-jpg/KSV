@@ -1,0 +1,15 @@
+{
+  "name": "ksv-service-landing",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Лендинг сервисного центра KSV · Новокосино",
+  "scripts": {
+    "dev": "tailwindcss -i assets/css/input.css -o assets/css/style.css --watch",
+    "build": "tailwindcss -i assets/css/input.css -o assets/css/style.css --minify",
+    "build:noop": "echo skip"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "tailwindcss": "^3.4.19"
+  }
+}

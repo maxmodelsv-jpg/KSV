@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /.netlify/
+Disallow: /netlify/
+
+Sitemap: https://ksv-remont.ru/sitemap.xml
+
+Host: ksv-remont.ru
