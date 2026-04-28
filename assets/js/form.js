@@ -77,9 +77,9 @@
       }
 
       form.innerHTML = `
-        <div class="text-center py-6">
+        <div class="text-center py-6" role="status" aria-live="polite">
           <div class="w-14 h-14 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="w-7 h-7 text-accent" aria-hidden="true"><use href="#i-check"/></svg>
           </div>
           <div class="font-display font-bold text-xl mb-2">Заявка принята</div>
           <p class="text-muted text-sm">Перезвоним с 09:00 до 21:00</p>

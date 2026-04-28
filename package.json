@@ -1,6 +1,6 @@
 {
   "name": "ksv-service-landing",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "description": "Лендинг сервисного центра KSV · Новокосино",
   "scripts": {

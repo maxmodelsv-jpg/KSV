@@ -44,32 +44,6 @@
     close?.addEventListener('click', () => hideBanner(false));
   }
 
-  let lenis = null;
-  if (!prefersReducedMotion && typeof window.Lenis !== 'undefined') {
-    lenis = new window.Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      smoothTouch: false,
-    });
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        const id = link.getAttribute('href');
-        if (!id || id === '#') return;
-        const target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        lenis.scrollTo(target, { offset: -80, duration: 1.2 });
-      });
-    });
-  }
-
   const progress = document.getElementById('scroll-progress');
   const scrollGoals = { 50: false, 90: false };
   const trackScrollGoal = (pct) => {
@@ -212,6 +186,50 @@
     apply(range.value);
     range.addEventListener('input', () => apply(range.value));
   });
+
+  const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+  const sectionMap = new Map();
+  navLinks.forEach((link) => {
+    const id = link.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if (sec) sectionMap.set(sec, link);
+  });
+  if (sectionMap.size && 'IntersectionObserver' in window) {
+    const setActive = (link) => {
+      navLinks.forEach((l) => {
+        const isActive = l === link;
+        l.classList.toggle('text-white', isActive);
+        l.classList.toggle('text-white/75', !isActive);
+        if (isActive) l.setAttribute('aria-current', 'true');
+        else l.removeAttribute('aria-current');
+      });
+    };
+    const spy = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) {
+        const link = sectionMap.get(visible.target);
+        if (link) setActive(link);
+      }
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+    sectionMap.forEach((_, sec) => spy.observe(sec));
+  }
+
+  const mapFacade = document.getElementById('map-facade');
+  if (mapFacade) {
+    mapFacade.addEventListener('click', () => {
+      const src = mapFacade.getAttribute('data-map-src');
+      if (!src) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = 'Сервис KSV на карте Яндекса';
+      iframe.className = 'w-full h-full border-0';
+      iframe.loading = 'lazy';
+      iframe.setAttribute('allow', 'fullscreen');
+      mapFacade.replaceWith(iframe);
+    }, { once: true });
+  }
 
   const privacyModal = document.getElementById('privacy-modal');
   if (privacyModal && typeof privacyModal.showModal === 'function') {
