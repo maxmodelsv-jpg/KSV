@@ -29,6 +29,7 @@
   }
 
   const COOKIE_KEY = 'ksv_cookies_accepted';
+  const COOKIE_TTL = 180 * 24 * 60 * 60 * 1000;
   const banner = document.getElementById('cookie-banner');
   const accept = document.getElementById('cookie-accept');
   const close = document.getElementById('cookie-close');
@@ -37,7 +38,8 @@
     if (remember) localStorage.setItem(COOKIE_KEY, String(Date.now()));
   };
   if (banner && accept) {
-    if (!localStorage.getItem(COOKIE_KEY)) {
+    const stored = localStorage.getItem(COOKIE_KEY);
+    if (!stored || Date.now() - Number(stored) > COOKIE_TTL) {
       setTimeout(() => banner.classList.remove('hidden'), 1500);
     }
     accept.addEventListener('click', () => hideBanner(true));
