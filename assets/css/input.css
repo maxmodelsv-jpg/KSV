@@ -591,9 +591,6 @@
   }
 }
 
-@media (min-width: 1024px) {
-  #mobile-cta { display: none !important; }
-}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
