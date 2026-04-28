@@ -13,6 +13,8 @@ module.exports = {
         'body-muted': '#52525B',
         accent: '#DC2626',
         'accent-hover': '#B91C1C',
+        tech: '#06B6D4',
+        'tech-dim': 'rgba(6,182,212,0.15)',
         'light-bg': '#FAFAFA',
         border: '#E4E4E7',
       },
