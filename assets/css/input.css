@@ -64,7 +64,10 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 96px;
+    scroll-padding-top: 80px;
+  }
+  @media (min-width: 768px) {
+    html { scroll-padding-top: 96px; }
   }
 
   body {
@@ -150,20 +153,6 @@
   [data-reveal].is-visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  .map-facade-bg {
-    background:
-      linear-gradient(to right, rgba(24, 24, 27, 0.06) 1px, transparent 1px) 0 0 / 32px 32px,
-      linear-gradient(to bottom, rgba(24, 24, 27, 0.06) 1px, transparent 1px) 0 0 / 32px 32px,
-      linear-gradient(135deg, #FAFAFA 0%, #E4E4E7 100%);
-  }
-  .map-pin {
-    width: 24px;
-    height: 32px;
-    background: var(--c-accent);
-    clip-path: path('M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20c0-6.6-5.4-12-12-12zm0 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z');
-    filter: drop-shadow(0 4px 12px rgba(220, 38, 38, 0.35));
   }
 
   .pricing-row {
@@ -319,171 +308,6 @@
   }
   .reviews-track::-webkit-scrollbar-thumb:hover {
     background: #A1A1AA;
-  }
-
-  .work-view {
-    overflow: hidden;
-    touch-action: pan-y;
-    user-select: none;
-  }
-  .work-layer {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 1rem;
-  }
-  .work-after {
-    background-color: #7A5C3E;
-    background-image:
-      repeating-linear-gradient(87deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 5px, rgba(0,0,0,0.03) 5px, rgba(0,0,0,0.03) 6px),
-      repeating-linear-gradient(176deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 16px, rgba(255,255,255,0.04) 16px, rgba(255,255,255,0.04) 17px);
-  }
-  .work-before {
-    background-color: #7A5C3E;
-    background-image:
-      repeating-linear-gradient(87deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 5px, rgba(0,0,0,0.03) 5px, rgba(0,0,0,0.03) 6px),
-      repeating-linear-gradient(176deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 16px, rgba(255,255,255,0.04) 16px, rgba(255,255,255,0.04) 17px);
-    clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0);
-    -webkit-clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0);
-  }
-  .work-photo {
-    position: absolute;
-    width: 82%;
-    height: 84%;
-    object-fit: cover;
-    object-position: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-2.5deg);
-    border-radius: 4px;
-    box-shadow:
-      0 2px 4px rgba(0,0,0,0.20),
-      0 8px 24px rgba(0,0,0,0.50),
-      0 0 0 1px rgba(255,255,255,0.08);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .work-after .work-photo {
-    transform: translate(-50%, -50%) rotate(2deg);
-  }
-  /* Реальное фото на всю плитку (без полароид-стилизации) */
-  .work-photo--left,
-  .work-photo--right {
-    width: 100%;
-    height: 100%;
-    transform: none;
-    border-radius: 0;
-    box-shadow: none;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-  }
-  .work-photo--left { object-position: left center; }
-  .work-photo--right { object-position: right center; }
-  .work-after .work-photo--right { transform: none; }
-  .work-ph-label {
-    position: relative;
-    z-index: 1;
-    font-family: "Inter Tight", Inter, system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.85);
-    color: #18181B;
-    backdrop-filter: blur(4px);
-  }
-  .work-after .work-ph-label {
-    align-self: flex-end;
-    margin-left: auto;
-    background: rgba(10, 10, 10, 0.75);
-    color: #fff;
-  }
-  .work-divider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: var(--pos, 50%);
-    width: 2px;
-    background: #fff;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-    transform: translateX(-50%);
-  }
-  .work-handle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .work-handle::before,
-  .work-handle::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-  }
-  .work-handle::before {
-    left: 9px;
-    border-right: 6px solid #18181B;
-    transform: translateY(-50%);
-  }
-  .work-handle::after {
-    right: 9px;
-    border-left: 6px solid #18181B;
-    transform: translateY(-50%);
-  }
-  .work-range {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: ew-resize;
-    margin: 0;
-    padding: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-  }
-  .work-range::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: transparent;
-    cursor: ew-resize;
-  }
-  .work-range::-moz-range-thumb {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: transparent;
-    cursor: ew-resize;
-    border: 0;
-  }
-  .work-view:focus-within .work-divider {
-    box-shadow: 0 0 0 3px var(--accent), 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  .work-view:focus-within .work-handle {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
   }
 
   .brands-marquee {
@@ -844,9 +668,10 @@
     align-items: center;
     gap: 4px;
     padding: 10px 4px;
+    min-height: 60px;
     border-radius: 10px;
     border: 1.5px solid var(--c-border);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     background: #fff;

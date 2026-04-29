@@ -16,15 +16,19 @@
   };
 
   if (burger && mobileMenu) {
+    const toggle = (open) => {
+      setMenu(open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
     burger.addEventListener('click', () => {
       const isOpen = !mobileMenu.classList.contains('hidden');
-      setMenu(!isOpen);
+      toggle(!isOpen);
     });
     mobileMenu.querySelectorAll('a').forEach(link =>
-      link.addEventListener('click', () => setMenu(false))
+      link.addEventListener('click', () => toggle(false))
     );
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) setMenu(false);
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) toggle(false);
     });
   }
 
@@ -62,12 +66,11 @@
         if (window.ym && window.YM_COUNTER_ID) {
           window.ym(window.YM_COUNTER_ID, 'reachGoal', goal);
         }
-        if (!window.__trackLog) window.__trackLog = [];
-        window.__trackLog.push({ goal, at: new Date().toISOString() });
       }
     }
   };
   if (progress) {
+    let ticking = false;
     const update = () => {
       const doc = document.documentElement;
       const scrolled = doc.scrollTop || document.body.scrollTop;
@@ -75,8 +78,14 @@
       const pct = Math.min(1, Math.max(0, scrolled / max));
       progress.style.transform = `scaleX(${pct})`;
       trackScrollGoal(pct);
+      ticking = false;
     };
-    window.addEventListener('scroll', update, { passive: true });
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
     update();
   }
 
@@ -146,10 +155,13 @@
     pricingTabs.forEach((tab, idx) => {
       tab.addEventListener('click', () => activate(tab.getAttribute('data-tab')));
       tab.addEventListener('keydown', (e) => {
-        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        let next = null;
+        if (e.key === 'ArrowRight') next = pricingTabs[(idx + 1) % pricingTabs.length];
+        else if (e.key === 'ArrowLeft') next = pricingTabs[(idx - 1 + pricingTabs.length) % pricingTabs.length];
+        else if (e.key === 'Home') next = pricingTabs[0];
+        else if (e.key === 'End') next = pricingTabs[pricingTabs.length - 1];
+        if (!next) return;
         e.preventDefault();
-        const dir = e.key === 'ArrowRight' ? 1 : -1;
-        const next = pricingTabs[(idx + dir + pricingTabs.length) % pricingTabs.length];
         next.focus();
         activate(next.getAttribute('data-tab'));
       });
@@ -162,8 +174,6 @@
       if (window.ym && window.YM_COUNTER_ID) {
         window.ym(window.YM_COUNTER_ID, 'reachGoal', goal);
       }
-      if (!window.__trackLog) window.__trackLog = [];
-      window.__trackLog.push({ goal, at: new Date().toISOString() });
     });
   });
 
@@ -212,16 +222,6 @@
     });
   }
 
-  document.querySelectorAll('.work-view').forEach((view) => {
-    const range = view.querySelector('.work-range');
-    if (!range) return;
-    const apply = (val) => {
-      view.style.setProperty('--pos', `${val}%`);
-    };
-    apply(range.value);
-    range.addEventListener('input', () => apply(range.value));
-  });
-
   const navLinks = document.querySelectorAll('header nav a[href^="#"]');
   const sectionMap = new Map();
   navLinks.forEach((link) => {
@@ -249,21 +249,6 @@
       }
     }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
     sectionMap.forEach((_, sec) => spy.observe(sec));
-  }
-
-  const mapFacade = document.getElementById('map-facade');
-  if (mapFacade) {
-    mapFacade.addEventListener('click', () => {
-      const src = mapFacade.getAttribute('data-map-src');
-      if (!src) return;
-      const iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.title = 'Сервис KSV на карте Яндекса';
-      iframe.className = 'w-full h-full border-0';
-      iframe.loading = 'lazy';
-      iframe.setAttribute('allow', 'fullscreen');
-      mapFacade.replaceWith(iframe);
-    }, { once: true });
   }
 
   const privacyModal = document.getElementById('privacy-modal');
