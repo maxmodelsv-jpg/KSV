@@ -33,12 +33,18 @@
   const banner = document.getElementById('cookie-banner');
   const accept = document.getElementById('cookie-accept');
   const close = document.getElementById('cookie-close');
+  const safeStorageGet = (key) => {
+    try { return localStorage.getItem(key); } catch { return null; }
+  };
+  const safeStorageSet = (key, value) => {
+    try { localStorage.setItem(key, value); } catch { /* Safari Private Mode и т.п. */ }
+  };
   const hideBanner = (remember) => {
     banner?.classList.add('hidden');
-    if (remember) localStorage.setItem(COOKIE_KEY, String(Date.now()));
+    if (remember) safeStorageSet(COOKIE_KEY, String(Date.now()));
   };
   if (banner && accept) {
-    const stored = localStorage.getItem(COOKIE_KEY);
+    const stored = safeStorageGet(COOKIE_KEY);
     if (!stored || Date.now() - Number(stored) > COOKIE_TTL) {
       setTimeout(() => banner.classList.remove('hidden'), 1500);
     }
@@ -180,7 +186,7 @@
   }
 
   document.querySelectorAll('.device-row').forEach((row) => {
-    const hidden = row.parentElement.querySelector('input[type="hidden"][name="device"]');
+    const hidden = row.closest('form')?.querySelector('input[type="hidden"][name="device"]');
     row.querySelectorAll('.device-chip').forEach((chip) => {
       chip.addEventListener('click', () => {
         row.querySelectorAll('.device-chip').forEach((c) => {
