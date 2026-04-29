@@ -75,7 +75,6 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: JSON.stringify({ ok: false, error: 'not_configured' }) };
   }
 
-  const sourceLabel = source === 'hero' ? 'Hero (короткая)' : source === 'contacts' ? 'Контакты (полная)' : source;
   const utmLines = Object.entries(utm)
     .filter(([k, v]) => k.startsWith('utm_') && v)
     .map(([k, v]) => `<code>${escapeHtml(k)}</code>: ${escapeHtml(String(v))}`)
@@ -83,7 +82,6 @@ exports.handler = async (event) => {
 
   const lines = [
     '🔔 <b>Новая заявка · KSV</b>',
-    `📍 Источник: <b>${escapeHtml(sourceLabel)}</b>`,
     '',
     `👤 Имя: <b>${escapeHtml(name)}</b>`,
     `📞 Телефон: <a href="tel:${escapeHtml(phone)}">${escapeHtml(phone)}</a>`,
