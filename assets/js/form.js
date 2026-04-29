@@ -96,11 +96,15 @@
   document.querySelectorAll('form#hero-form, form#contacts-form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (form.dataset.submitting === '1') return;
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      submitForm(form);
+      form.dataset.submitting = '1';
+      Promise.resolve(submitForm(form)).finally(() => {
+        delete form.dataset.submitting;
+      });
     });
   });
 })();
