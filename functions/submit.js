@@ -54,7 +54,9 @@ const checkOrigin = (request, env) => {
     : DEFAULT_ALLOWED_ORIGINS;
   const origin = (request.headers.get('origin') || request.headers.get('referer') || '').toLowerCase();
   if (!origin) return false;
-  if (origin.includes('.pages.dev')) return true; // Cloudflare preview deployments
+  // Cloudflare preview/dev URLs
+  if (origin.includes('.pages.dev')) return true;
+  if (origin.includes('.workers.dev')) return true;
   return allowed.some((a) => origin.startsWith(a.toLowerCase()));
 };
 
