@@ -39,3 +39,10 @@ logs/
 # Playwright screenshots / snapshots (для отладки, не в репо)
 .playwright-mcp/
 *.playwright.png
+
+# Секреты и локальные артефакты
+*.txt
+*.jpeg
+*.code-workspace
+codebase-for-review.md
+Logo.png
