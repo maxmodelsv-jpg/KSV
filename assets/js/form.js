@@ -50,6 +50,7 @@
       phone,
       device: fd.get('device') || '',
       problem: fd.get('problem') || '',
+      consent: !!fd.get('consent'),
       utm: getUtm(),
       at: new Date().toISOString(),
     };

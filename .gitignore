@@ -46,3 +46,12 @@ logs/
 *.code-workspace
 codebase-for-review.md
 Logo.png
+
+# Ключи и сертификаты (на всякий случай)
+*.pem
+*.key
+*.pfx
+*.p12
+id_rsa
+id_ed25519
+secrets/

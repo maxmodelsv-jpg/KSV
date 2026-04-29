@@ -12,7 +12,10 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.webvisor.org https://mc.webvisor.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://mc.yandex.ru https://*.maps.yandex.net https://*.yandex.ru https://images.unsplash.com; frame-src https://yandex.ru https://*.yandex.ru; connect-src 'self' https://mc.yandex.ru https://mc.webvisor.org https://mc.webvisor.com https://api.telegram.org; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 [[headers]]
   for = "/assets/css/*"
