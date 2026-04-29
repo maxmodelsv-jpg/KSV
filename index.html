@@ -30,9 +30,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Inter+Tight:wght@700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Inter+Tight:wght@700;800&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Inter+Tight:wght@700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Inter+Tight:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Inter+Tight:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Inter+Tight:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap"></noscript>
 
   <link rel="stylesheet" href="/assets/css/style.css">
 
@@ -161,8 +161,8 @@
 
   <header id="site-header" class="fixed top-0 left-0 right-0 z-40 bg-dark/85 backdrop-blur-xl border-b border-white/5">
     <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-[72px] flex items-center justify-between">
-      <a href="#hero" class="font-display font-extrabold text-2xl md:text-[26px] text-white tracking-tight" aria-label="KSV — на главную">
-        KS<span class="text-accent">V</span>
+      <a href="#hero" class="inline-flex items-center gap-0 font-display font-extrabold text-2xl md:text-[26px] text-white tracking-tight leading-none" aria-label="KSV — на главную">
+        KS<span class="ksv-v-box">V</span>
       </a>
       <nav class="hidden md:flex items-center gap-7 lg:gap-9 text-sm text-white/75">
         <a href="#services" class="hover:text-accent transition-colors duration-200">Услуги</a>
@@ -199,6 +199,37 @@
   <section id="hero" class="relative bg-dark text-white overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 min-h-[92svh] flex items-center">
     <div class="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
     <div class="circuit-dark-layer" aria-hidden="true"></div>
+    <svg class="hero-circuit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <path id="t1" d="M0 220 L360 220 L400 260 L800 260 L840 220 L1440 220"/>
+        <path id="t2" d="M0 520 L200 520 L240 480 L680 480 L720 520 L1440 520"/>
+        <path id="t3" d="M320 0 L320 180 L480 180 L480 0"/>
+        <path id="t4" d="M960 0 L960 340 L1100 340 L1100 900"/>
+        <path id="t5" d="M0 720 L560 720 L600 680 L1060 680 L1100 720 L1440 720"/>
+        <path id="t6" d="M640 900 L640 440 L800 440 L800 900"/>
+      </defs>
+      <g class="traces">
+        <use href="#t1"/><use href="#t2"/><use href="#t3"/>
+        <use href="#t4"/><use href="#t5"/><use href="#t6"/>
+        <path d="M400 260 L400 320 L560 320" fill="none" stroke="rgba(6,182,212,0.10)" stroke-width="1"/>
+        <path d="M840 220 L840 140 L1100 140" fill="none" stroke="rgba(6,182,212,0.08)" stroke-width="1"/>
+        <path d="M480 180 L640 180 L640 440" fill="none" stroke="rgba(6,182,212,0.07)" stroke-width="1"/>
+        <path d="M200 520 L200 680" fill="none" stroke="rgba(6,182,212,0.07)" stroke-width="1"/>
+        <path d="M720 520 L720 680" fill="none" stroke="rgba(6,182,212,0.06)" stroke-width="1"/>
+      </g>
+      <g class="pads">
+        <circle class="pad-active" cx="360" cy="220" r="2.5"/>
+        <circle class="pad-active" cx="800" cy="260" r="2.5"/>
+        <circle class="pad-active" cx="480" cy="180" r="2.5"/>
+        <circle class="pad-active" cx="960" cy="340" r="2.5"/>
+        <circle class="pad-active" cx="560" cy="720" r="2.5"/>
+        <circle class="pad-active" cx="640" cy="440" r="2.5"/>
+      </g>
+      <use class="pulse" href="#t1"/>
+      <use class="pulse p2" href="#t2"/>
+      <use class="pulse p3" href="#t5"/>
+      <use class="pulse p4" href="#t4"/>
+    </svg>
     <div class="relative max-w-7xl mx-auto px-4 md:px-8 w-full grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
       <div class="lg:col-span-7 xl:col-span-8" data-reveal>
@@ -241,27 +272,27 @@
       </div>
 
       <div class="lg:col-span-5 xl:col-span-4" data-reveal data-reveal-delay="150">
-        <div class="bg-white text-dark-2 rounded-2xl p-6 md:p-7 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.55)] border border-black/5">
+        <div class="form-card bg-white text-dark-2 rounded-2xl p-6 md:p-7 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.55)] border border-black/5">
           <div class="flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-[0.15em] mb-2">
             <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
             Запись на звонок
           </div>
           <div class="font-display font-extrabold text-2xl mb-5 tracking-tight">Перезвоним за 5&nbsp;минут</div>
-          <form id="hero-form" class="space-y-3" novalidate>
+          <form id="hero-form" novalidate>
             <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden">
             <input type="hidden" name="source" value="hero">
-            <div>
-              <label for="hero-name" class="sr-only">Ваше имя</label>
-              <input id="hero-name" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required class="w-full h-12 px-4 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200">
+            <div class="field">
+              <input id="hero-name" type="text" name="name" placeholder=" " autocomplete="name" required class="phone-mask">
+              <label for="hero-name">Ваше имя</label>
             </div>
-            <div>
-              <label for="hero-phone" class="sr-only">Телефон</label>
-              <input id="hero-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required class="w-full h-12 px-4 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200 phone-mask tabular-nums">
+            <div class="field">
+              <input id="hero-phone" type="tel" name="phone" placeholder=" " autocomplete="tel" inputmode="tel" required class="phone-mask tabular-nums">
+              <label for="hero-phone">Телефон&nbsp;+7&nbsp;(___) ___-__-__</label>
             </div>
-            <button type="submit" data-magnetic class="w-full h-12 bg-dark hover:bg-black transition-colors duration-200 text-white font-semibold rounded-xl">
+            <button type="submit" data-magnetic class="w-full h-12 bg-dark hover:bg-black transition-colors duration-200 text-white font-semibold rounded-xl mt-1">
               Жду звонка
             </button>
-            <p class="text-xs text-muted text-center leading-relaxed px-2">
+            <p class="text-xs text-muted text-center leading-relaxed px-2 mt-3">
               Нажимая, соглашаюсь с <a href="#privacy" class="underline hover:text-dark-2 transition-colors">политикой обработки данных</a>
             </p>
           </form>
@@ -285,7 +316,7 @@
       </div>
 
       <div class="mt-14 grid md:grid-cols-3 gap-5">
-        <article class="group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200" data-reveal>
+        <article class="svc-card group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200" data-reveal>
           <div class="w-12 h-12 rounded-xl bg-dark-2 text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-200">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5" ry="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
@@ -300,7 +331,7 @@
           </ul>
         </article>
 
-        <article class="group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200" data-reveal data-reveal-delay="100">
+        <article class="svc-card group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200" data-reveal data-reveal-delay="100">
           <div class="w-12 h-12 rounded-xl bg-dark-2 text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-200">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5" ry="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
@@ -315,7 +346,7 @@
           </ul>
         </article>
 
-        <article class="group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200" data-reveal data-reveal-delay="200">
+        <article class="svc-card group bg-white rounded-2xl p-8 border border-border hover:border-dark-2 transition-colors duration-200" data-reveal data-reveal-delay="200">
           <div class="w-12 h-12 rounded-xl bg-dark-2 text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-200">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
           </div>
@@ -548,7 +579,7 @@
       </div>
 
       <div class="mt-14 grid md:grid-cols-3 gap-5">
-        <div class="bg-white/[0.04] border border-tech/20 rounded-2xl p-8 backdrop-blur-sm card-tech" data-reveal>
+        <div class="warr-card bg-white/[0.04] border border-tech/20 rounded-2xl p-8 backdrop-blur-sm card-tech" data-reveal>
           <div class="flex items-baseline gap-2 mb-5">
             <span class="font-display font-extrabold text-[5rem] leading-none text-accent tabular-nums neon-num">12</span>
             <span class="font-display font-bold text-xl text-white/70">мес</span>
@@ -559,7 +590,7 @@
           </p>
         </div>
 
-        <div class="bg-white/[0.04] border border-tech/20 rounded-2xl p-8 backdrop-blur-sm card-tech" data-reveal data-reveal-delay="100">
+        <div class="warr-card bg-white/[0.04] border border-tech/20 rounded-2xl p-8 backdrop-blur-sm card-tech" data-reveal data-reveal-delay="100">
           <div class="flex items-baseline gap-2 mb-5">
             <span class="font-display font-extrabold text-[5rem] leading-none text-accent tabular-nums neon-num">6</span>
             <span class="font-display font-bold text-xl text-white/70">мес</span>
@@ -570,7 +601,7 @@
           </p>
         </div>
 
-        <div class="bg-white/[0.04] border border-tech/20 rounded-2xl p-8 backdrop-blur-sm card-tech" data-reveal data-reveal-delay="200">
+        <div class="warr-card bg-white/[0.04] border border-tech/20 rounded-2xl p-8 backdrop-blur-sm card-tech" data-reveal data-reveal-delay="200">
           <div class="flex items-baseline gap-2 mb-5">
             <span class="font-display font-extrabold text-[5rem] leading-none text-accent tabular-nums neon-num">30</span>
             <span class="font-display font-bold text-xl text-white/70">дней</span>
@@ -700,7 +731,22 @@
         </p>
       </div>
 
-      <div class="mt-14 relative" data-reveal>
+      <div class="mt-10 rating-block" data-reveal>
+        <div class="rating-big">
+          <div class="rating-big__num">5.0</div>
+          <div class="rating-big__stars">★★★★★</div>
+          <div class="rating-big__count">411 отзывов</div>
+        </div>
+        <div class="rating-bars">
+          <div class="rb"><span>5★</span><span class="rb-bar"><span style="--w:96%"></span></span><span class="rb-count">395</span></div>
+          <div class="rb"><span>4★</span><span class="rb-bar"><span style="--w:3%; animation-delay:.15s"></span></span><span class="rb-count">12</span></div>
+          <div class="rb"><span>3★</span><span class="rb-bar"><span style="--w:1%; animation-delay:.3s"></span></span><span class="rb-count">4</span></div>
+          <div class="rb"><span>2★</span><span class="rb-bar"><span style="--w:0%"></span></span><span class="rb-count">0</span></div>
+          <div class="rb"><span>1★</span><span class="rb-bar"><span style="--w:0%"></span></span><span class="rb-count">0</span></div>
+        </div>
+      </div>
+
+      <div class="mt-10 relative" data-reveal>
         <div id="reviews-track" class="reviews-track flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory -mx-4 md:-mx-8 px-4 md:px-8 scroll-smooth">
 
           <article class="reviews-card snap-start shrink-0 bg-light-bg rounded-2xl p-7 md:p-8 border border-border flex flex-col" itemprop="review" itemscope itemtype="https://schema.org/Review">
@@ -1183,18 +1229,26 @@
             </div>
 
             <div>
-              <label for="c-device" class="block text-sm font-semibold mb-1.5">Устройство</label>
-              <div class="relative">
-                <select id="c-device" name="device" required class="select-custom w-full h-12 px-4 pr-10 text-base bg-white border border-border rounded-lg focus:outline-none focus:border-dark-2 transition-colors duration-200">
-                  <option value="">Выберите устройство</option>
-                  <option>Телефон</option>
-                  <option>Планшет</option>
-                  <option>Ноутбук</option>
-                  <option>Принтер или МФУ</option>
-                  <option>Другое</option>
-                </select>
-                <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <div class="text-sm font-semibold mb-2">Устройство</div>
+              <div class="device-row" role="group" aria-label="Выберите тип устройства">
+                <button type="button" class="device-chip is-active" data-device="Телефон" aria-pressed="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  Телефон
+                </button>
+                <button type="button" class="device-chip" data-device="Планшет" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="15" y1="21" x2="9" y2="21"/></svg>
+                  Планшет
+                </button>
+                <button type="button" class="device-chip" data-device="Ноутбук" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 17h20M1 21h22"/></svg>
+                  Ноутбук
+                </button>
+                <button type="button" class="device-chip" data-device="Другое" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Другое
+                </button>
               </div>
+              <input type="hidden" id="c-device" name="device" value="Телефон">
             </div>
 
             <div>
@@ -1233,11 +1287,12 @@
 
   <footer class="bg-dark text-white py-14 md:py-16 pb-24 lg:pb-16 relative overflow-hidden">
     <div class="circuit-dark-layer" aria-hidden="true"></div>
+    <div class="ftr-mark absolute bottom-0 left-1/2 -translate-x-1/2 select-none pointer-events-none" aria-hidden="true">KS<span>V</span></div>
     <div class="relative max-w-7xl mx-auto px-4 md:px-8">
       <div class="grid md:grid-cols-3 gap-10">
         <div>
-          <div class="font-display font-extrabold text-3xl mb-4 tracking-tight">
-            KS<span class="text-accent">V</span>
+          <div class="inline-flex items-center gap-0 font-display font-extrabold text-3xl mb-4 tracking-tight leading-none">
+            KS<span class="ksv-v-box">V</span>
           </div>
           <p class="text-white/60 text-sm leading-relaxed max-w-xs">
             Сервисный центр по ремонту телефонов, планшетов, ноутбуков и&nbsp;оргтехники у&nbsp;метро Новокосино.

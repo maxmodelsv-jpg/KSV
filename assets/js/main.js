@@ -179,6 +179,33 @@
     });
   }
 
+  document.querySelectorAll('.device-row').forEach((row) => {
+    const hidden = row.parentElement.querySelector('input[type="hidden"][name="device"]');
+    row.querySelectorAll('.device-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        row.querySelectorAll('.device-chip').forEach((c) => {
+          c.classList.remove('is-active');
+          c.setAttribute('aria-pressed', 'false');
+        });
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-pressed', 'true');
+        if (hidden) hidden.value = chip.getAttribute('data-device') || '';
+      });
+    });
+  });
+
+  if (!prefersReducedMotion) {
+    document.querySelectorAll('.svc-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mx', `${x}%`);
+        card.style.setProperty('--my', `${y}%`);
+      });
+    });
+  }
+
   document.querySelectorAll('.work-view').forEach((view) => {
     const range = view.querySelector('.work-range');
     if (!range) return;
