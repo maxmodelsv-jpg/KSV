@@ -1,21 +1,48 @@
-# KSV — конфиг Apache для хостинга reg.ru
+# KSV — конфиг Apache для хостинга reg.ru (shared hosting safe)
+
+RewriteEngine On
 
 # === Принудительный HTTPS ===
-RewriteEngine On
 RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # === Редирект /privacy → /#privacy ===
 RewriteRule ^privacy/?$ /#privacy [R=301,L]
 
 # === Защита служебных файлов ===
-<FilesMatch "^(\.htaccess|\.env|\.git|\.gitignore|wrangler\.toml|netlify\.toml|package\.json|package-lock\.json|bun\.lockb|tailwind\.config\.js|postcss\.config\.js|README\.md|CLAUDE\.md)$">
-    Require all denied
-</FilesMatch>
-
-<DirectoryMatch "^.*/(node_modules|\.git|src|functions|netlify|research|V1-[0-9]+)/">
-    Require all denied
-</DirectoryMatch>
+<Files ".htaccess">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files ".env">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "wrangler.toml">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "package.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "package-lock.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "tailwind.config.js">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "CLAUDE.md">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "README.md">
+    Order Allow,Deny
+    Deny from all
+</Files>
 
 # === Заголовки безопасности ===
 <IfModule mod_headers.c>
@@ -24,8 +51,6 @@ RewriteRule ^privacy/?$ /#privacy [R=301,L]
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    Header set Cross-Origin-Opener-Policy "same-origin"
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://mc.yandex.ru https://mc.webvisor.org https://mc.webvisor.com https://yastatic.net; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; frame-src https:; connect-src 'self' https://mc.yandex.ru https://mc.webvisor.org https://mc.webvisor.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 
     # Кэш статики на год
     <FilesMatch "\.(css|js|png|jpg|jpeg|webp|svg|woff2|woff|ttf|ico)$">
@@ -46,12 +71,5 @@ RewriteRule ^privacy/?$ /#privacy [R=301,L]
 # === MIME-типы для современных форматов ===
 <IfModule mod_mime.c>
     AddType image/webp .webp
-    AddType image/avif .avif
     AddType font/woff2 .woff2
 </IfModule>
-
-# === SPA-fallback не нужен (одностраничник на якорях) ===
-
-# === Конфиг ENV-переменных для submit.php (если хостинг поддерживает) ===
-# SetEnv BOT_TOKEN "ваш_токен_от_BotFather"
-# SetEnv TELEGRAM_CHAT_ID "168629524"
