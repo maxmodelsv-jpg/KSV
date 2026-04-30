@@ -13,8 +13,8 @@
 const rateBuckets = new Map();
 
 const DEFAULT_ALLOWED_ORIGINS = [
-  'https://ksv-remont.ru',
-  'https://www.ksv-remont.ru',
+  'https://ksv-service.pro',
+  'https://www.ksv-service.pro',
 ];
 
 const ALLOWED_DEVICES = ['Телефон', 'Планшет', 'Ноутбук', 'Принтер или МФУ', 'Другое', ''];
