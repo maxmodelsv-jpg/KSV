@@ -61,7 +61,7 @@
     payload.website = form.querySelector('input[name="website"]').value || '';
 
     try {
-      const res = await fetch('/submit', {
+      const res = await fetch('/submit.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
