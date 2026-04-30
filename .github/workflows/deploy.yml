@@ -69,3 +69,4 @@ jobs:
             codebase-for-review.md
             .env
             .env.*
+            submit.php
