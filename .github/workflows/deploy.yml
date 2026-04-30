@@ -1,0 +1,67 @@
+name: Deploy to reg.ru
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # ручной запуск из GitHub UI
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          protocol: ftp
+          port: 21
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github/**
+            src/**
+            functions/**
+            netlify/**
+            V1-1/**
+            V1-2/**
+            V1-3/**
+            V1-4/**
+            research/**
+            wrangler.toml
+            wrangler.jsonc
+            _headers
+            _redirects
+            .assetsignore
+            .gitignore
+            tailwind.config.js
+            postcss.config.js
+            package.json
+            package-lock.json
+            bun.lockb
+            README.md
+            CLAUDE.md
+            **/*.md
+            **/*.txt
+            **/*.jpeg
+            **/*.code-workspace
+            codebase-for-review.md
+            .env
+            .env.*
