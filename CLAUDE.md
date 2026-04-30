@@ -163,10 +163,9 @@
 - **Слоты под будущие фото:** `hero-side.webp`, `workshop-*.webp`, `master-*.webp`, `work-*.webp`, `before-*/after-*.webp`
 
 ### Домен и e-mail
-- **Основной домен:** `ksv-remont.ru`
-- **Fallback-список:** `ksv-service.ru` → `ksv-repair.ru` → `ksv-novokosino.ru` → `ksv.moscow`
-- **E-mail:** `info@ksv-remont.ru` через Яндекс 360 для бизнеса (бесплатно)
-- **Доп. ящик:** `privacy@ksv-remont.ru` для 152-ФЗ-запросов
+- **Основной домен:** `ksv-service.pro` (куплен и привязывается 2026-04-30)
+- **E-mail:** `info@ksv-service.pro` через Яндекс 360 для бизнеса (бесплатно)
+- **Доп. ящик:** `privacy@ksv-service.pro` для 152-ФЗ-запросов
 - **SSL:** Netlify, Let's Encrypt, auto-renew
 
 ### Аналитика
@@ -251,7 +250,7 @@
 - [ ] ИНН
 - [ ] ОГРН / ОГРНИП
 - [ ] Почтовый адрес для юр. корреспонденции (если отличается)
-- [ ] Купленный домен (подтверждение `ksv-remont.ru` или fallback)
+- [x] Купленный домен — `ksv-service.pro`
 - [ ] Токен Telegram-бота (`BOT_TOKEN` в Netlify env)
 - [ ] Chat ID владельца (`TELEGRAM_CHAT_ID` в Netlify env)
 - [ ] Яндекс.Метрика ID
