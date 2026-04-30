@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:  # ручной запуск из GitHub UI
 
+env:
+  # Опт-ин в Node.js 24 для action-раннеров (Node.js 20 deprecated с июня 2026)
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
