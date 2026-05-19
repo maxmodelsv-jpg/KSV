@@ -65,6 +65,7 @@ jobs:
             **/*.md
             **/*.txt
             **/*.jpeg
+            **/*.jpg
             **/*.code-workspace
             codebase-for-review.md
             .env
